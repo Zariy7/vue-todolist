@@ -3,6 +3,7 @@ let { createApp } = Vue;
 createApp({
     data() {
         return {
+            addField: '',
             todoList: [
                 {
                     text: 'Walk the dog.',
@@ -30,6 +31,12 @@ createApp({
     methods: {
         listRemove(index){
             this.todoList.splice(index, 1);
+        },
+        listAdd(){
+            this.todoList.push({
+                text: this.addField,
+                done: false,
+            });
         }
     }
 }).mount('#app');

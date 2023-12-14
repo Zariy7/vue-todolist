@@ -13,7 +13,7 @@
         <div id="app">
             <div class="container">
                 <h1 class="text-center">Tovuelist</h1>
-                <ul class="list-group">
+                <ul class="list-group my-5">
                     <li class="list-group-item d-flex justify-content-between" v-for="chore, index in todoList" :key="index" :class="chore.done ? 'text-decoration-line-through' : ''">
                         <div>{{chore.text}}</div>
                         <div>
@@ -26,6 +26,21 @@
                         </div>
                     </li>
                 </ul>
+                <div class="my-1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-2">
+                                <label for="addField" class="form-label">More stuff came up?</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="form-control" placeholder="Add a Task!" name="addField" v-model="addField">
+                            </div>
+                            <div class="col-2">
+                                <div class="btn btn-success" @click="listAdd">Continue!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
