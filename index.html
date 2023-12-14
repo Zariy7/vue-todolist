@@ -17,10 +17,10 @@
                     <li class="list-group-item d-flex justify-content-between" v-for="chore, index in todoList" :key="index" :class="chore.done ? 'text-decoration-line-through' : ''">
                         <div>{{chore.text}}</div>
                         <div>
-                            <div class="btn" v-if="chore.done" @click="chore.done = !chore.done">
+                            <div class="btn" @click="chore.done = !chore.done">
                                 <i class="fa-solid fa-check"></i>
                             </div>
-                            <div class="btn" v-if="!chore.done" @click="chore.done = !chore.done">
+                            <div class="btn" @click="listRemove(index)">
                                 <i class="fa-solid fa-xmark"></i>
                             </div>
                         </div>

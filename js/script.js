@@ -28,6 +28,8 @@ createApp({
         }
     },
     methods: {
-        
+        listRemove(index){
+            this.todoList.splice(index, 1);
+        }
     }
 }).mount('#app');
