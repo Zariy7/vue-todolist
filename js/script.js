@@ -33,10 +33,12 @@ createApp({
             this.todoList.splice(index, 1);
         },
         listAdd(){
-            this.todoList.push({
-                text: this.addField,
-                done: false,
-            });
+            if(this.addField != ''){
+                this.todoList.push({
+                    text: this.addField,
+                    done: false,
+                });
+            }
         }
     }
 }).mount('#app');
